@@ -1,0 +1,208 @@
+
+R version 3.5.0 (2018-04-23) -- "Joy in Playing"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> z<-12
+> class(z)
+[1] "numeric"
+> z<-1L
+> class(z)
+[1] "integer"
+> x<-c(12, TRUE)
+> x
+[1] 12  1
+> z<-c(12, TRUE)
+> z
+[1] 12  1
+> y<- c("a",1+0i)
+> y
+[1] "a"    "1+0i"
+> z<- vector("logical", length = 2)
+> z
+[1] FALSE FALSE
+> z<-c(12, TRUE)
+> z<- vector("logical", length = 2)
+> z
+[1] FALSE FALSE
+> z<-c(12, TRUE)
+> class(z)
+[1] "numeric"
+> y<- c("a",1+0i)
+> class(y)
+[1] "character"
+> z<-c(12, TRUE)
+> as.logical(z)
+[1] TRUE TRUE
+> y<- c("a",1+0i)
+> as.complex(y)
+[1]   NA 1+0i
+Warning message:
+NAs introduced by coercion 
+> m<-(110,113,115,133)
+Error: unexpected ',' in "m<-(110,"
+> m<-c(110,113,115,133)
+> n<-c(113,212,818,1110)
+> rbind(m,n)
+  [,1] [,2] [,3] [,4]
+m  110  113  115  133
+n  113  212  818 1110
+> dim(m,n)
+Error in dim(m, n) : 2 arguments passed to 'dim' which requires 1
+> dim(m)
+NULL
+> attribute(m)
+Error in attribute(m) : could not find function "attribute"
+> attributes(m)
+NULL
+> dim(m)
+NULL
+> attributes(m)
+NULL
+> dim(n)
+NULL
+> attributes(n)
+NULL
+> z<-list(22,"a",1+4i,TRUE)
+> z[[3]]
+[1] 1+4i
+> class([[3]])
+Error: unexpected '[[' in "class([["
+> z<-list(22,"a",1+4i,TRUE)
+> class([[3]])
+Error: unexpected '[[' in "class([["
+> class([3])
+Error: unexpected '[' in "class(["
+> z<-list(22,"a",1+4i,TRUE)
+> names(z)
+NULL
+> names(z)<-list(22,"a",1+4i,TRUE)
+> z
+$`22`
+[1] 22
+
+$a
+[1] "a"
+
+$`1+4i`
+[1] 1+4i
+
+$`TRUE`
+[1] TRUE
+
+> names(z)<-list(22,"a",1+4i,TRUE)
+> class(z)
+[1] "list"
+> z<-list(22,"a",1+4i,TRUE)
+> class(z)
+[1] "list"
+> z<-10:40
+> y<-3
+> z+y
+ [1] 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37
+[26] 38 39 40 41 42 43
+> z<-10:40
+> y<-3
+> z+y
+ [1] 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32
+[21] 33 34 35 36 37 38 39 40 41 42 43
+> z<-10:40
+> y<-3
+> z*y
+ [1]  30  33  36  39  42  45  48  51  54  57  60  63  66  69  72
+[16]  75  78  81  84  87  90  93  96  99 102 105 108 111 114 117
+[31] 120
+> x<-c(117,114,14,15,113,112,110)
+> x{x>16 = 1}
+Error: unexpected '{' in "x{"
+> x|x>16=1
+Error in x | x > 16 = 1 : could not find function "|<-"
+> x = x>16
+> x
+[1]  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE
+> x[x<=15]=1
+> x
+[1] 1 1 1 1 1 1 1
+> x[x<=15]<-1
+> x
+[1] 1 1 1 1 1 1 1
+
+
+
+> > > > 
+> x[x<16]<-1
+> x
+[1] 1 1 1 1 1 1 1
+> x[x<16] <- 1
+> x
+[1] 1 1 1 1 1 1 1
+> x<-c(117,114,14,15,113,112,110)
+> x[x<16] <- 1
+> x
+[1] 117 114   1   1 113 112 110
+> qz = read.csv("quiz_data.csv")
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'quiz_data.csv': No such file or directory
+> qz = read.csv("Quiz Prelim/quiz_data.csv")
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'Quiz Prelim/quiz_data.csv': No such file or directory
+> x<-c(117,114,14,15,113,112,110)
+> x[x<16] <- 1
+> dput(x)
+c(117, 114, 1, 1, 113, 112, 110)
+> dput(x,file="sona.R")
+> new.y<-dget("sona.R")
+> new.y
+[1] 117 114   1   1 113 112 110
+> m<-(110,113,115,133)
+Error: unexpected ',' in "m<-(110,"
+> m<-c(110,113,115,133)
+> n<-c(113,212,818,1110)
+> rbind(m,n)
+  [,1] [,2] [,3] [,4]
+m  110  113  115  133
+n  113  212  818 1110
+> m<-c(110,113,115,133)
+> n<-c(113,212,818,1110)
+> z<-rbind(m,n)
+> z
+  [,1] [,2] [,3] [,4]
+m  110  113  115  133
+n  113  212  818 1110
+> dput(z)
+structure(c(110, 113, 113, 212, 115, 818, 133, 1110), .Dim = c(2L, 
+4L), .Dimnames = list(c("m", "n"), NULL))
+> dput(z,file="suna.R")
+> new.y<-dget("suna.R")
+> new.y
+  [,1] [,2] [,3] [,4]
+m  110  113  115  133
+n  113  212  818 1110
+> x<-c(117,114,14,15,113,112,110)
+> y <- x[x<16] <- 1
+> dput(y)
+1
+> x<-c(117,114,14,15,113,112,110)
+> x[x<16]=1
+> x
+[1] 117 114   1   1 113 112 110
+> x<-c(117,114,14,15,113,112,110)
+> y<- x[x<16]=1
+Error in y <- x[x < 16] = 1 : could not find function "<-<-"
+> 
